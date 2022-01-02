@@ -17,100 +17,92 @@
 \author{01121767@pw.edu.pl}
 
 \begin{document}
-    \maketitle
+\maketitle
 
+\section{Wstęp}
 
-    \section{Introduction}
+Fialka to maszyna szyfrująca, której nazwa pochodzi od słowa Violet czyli fiołek. Jest ona w dużej mierze oparta na Enigmie. Istnieje wiele typów tej maszyny, każdy kraj używający posiadał inny wariant tej maszyny. Maszyna była nieco bardziej skomplikowana niż ówczesne maszyny szyfrujące. Umożliwiała między innymi drukowanie zaszyfrowanego lub jawnego tekstu, konwersję szyfrogramu na zestaw znaków w systemie 5-bitowym oraz utworzenie taśmy perforowanej z zakodowanym tekstem. 
 
-    Your introduction goes here! Simply start writing your document and use the Recompile button to view the updated PDF preview. Examples of commonly used commands and features are listed below, to help you get started.
+M-125 Fialka była używana w wielu krajach byłego Układu Warszawskiego. Zasadniczo wszystkie maszyny Fialka danego modułu są identyczne, ale istnieją pewne drobne różnice dla każdego kraju. 
 
-    Once you're familiar with the editor, you can find various project setting in the Overleaf menu, accessed via the button in the very top left of the editor. To view tutorials, user guides, and further documentation, please visit our \href{https://www.overleaf.com/learn}{help library}, or head to our plans page to \href{https://www.overleaf.com/user/subscription/plans}{choose your plan}.
+Ponieważ każdy kraj miał swoje własne specyficzne okablowanie kół, byłoby niemożliwe, aby kraje wschodnioeuropejskie używały Fialki do wymiany wiadomości ze swoimi sąsiadami. Aby przezwyciężyć ten problem, podjęto dwa możliwe środki: 
 
+\begin{itemize}
+  \item W przypadku wojny identyczne koła zostałyby wydane wszystkim państwom Układu Warszawskiego. 
+  \item W przypadku niespodziewanej wojny, każdy kraj mógł użyć specjalnej zapieczętowanej skrzynki, która zawierała koła sąsiednich krajów. Każde takie pudełko zawierało maksymalnie cztery zestawy kół. Pudełko było zamknięte i zaplombowane, z malutkim sznurkiem dookoła, zakończonym woskową pieczęcią.
+\end{itemize}
 
-    \section{Some examples to get started}
+\section{Transmisja radiowa i Fialka}
 
-    \subsection{How to create Sections and Subsections}
+\subsection{Kod Baudot’a}
 
-    Simply use the section and subsection commands, as in this example document! With Overleaf, all the formatting and numbering is handled automatically according to the template you've chosen. If you're using Rich Text mode, you can also create new section and subsections via the buttons in the editor toolbar.
+Wiele lat temu, zanim satelity i Internet stały się powszechnie dostępne, telegrafy były powszechnie używane do przesyłania wiadomości z jednej części świata do drugiej. Dalekopisy te wykorzystywały 5-bitowy kod cyfrowy do kodowania tekstu wpisywanego z klawiatury. Każdy znak był zamieniany na unikalny wzór jedynek i zer, co pozwalało na uzyskanie w sumie 
+\begin{equation} \label{eqn}
+{2^5 = 32} 
+\end{equation}
+znaków. Proces ten nazywany jest kodowaniem. Powszechnie stosowanym standardem kodowania 5-bitowego jest standard Baudot’a. Maszyna dalekopisowa mogła "zapisać" wiadomość na taśmie papierowej, dziurkując dane cyfrowe w postaci wzoru dziur. Taśma ta może być odczytana (tj. załadowana) przez odpowiedni czytnik. 
 
-    \subsection{How to include Figures}
+\subsection{Transmisja radiowa}
 
-    First you have to upload the image file from your computer using the upload link in the file-tree menu. Then use the includegraphics command to include it in your document. Use the figure environment and the caption command to add a number and a caption to your figure. See the code for Figure \ref{fig:frog} in this section for an example.
+Często spekulowano, że Fialka była czasami używana w środowisku mobilnym, w połączeniu z radiotelefonem R-142. Mimo, że większość byłych operatorów Fialki jest przekonana, że Fialka nigdy nie była używana wewnątrz wozu dowodzenia, niektórzy uważają, że Fialka dobrze pasowałaby do pustej przestrzeni R-142. Badania (ref) pokazały, że Fialka rzeczywiście pasuje do pustej przestrzeni zestawu R-142. Cztery nóżki urządzenia można wsunąć w cztery otwory płyty bazowej, która znajduje się w pustej przestrzeni. Schemat blokowy radioodbiornika R-142 zawsze pokazywał dwa tajne urządzenia. Został on wydany w 1983 roku i ujawnia on prawdziwą tożsamość dwóch jednostek specjalnych. Jednostka specjalna B1 okazuje się być skramblerem głosu T-219, znanym również jako Jachta, mniejszą wersją szeroko rozpowszechnionego T-217 Elbrus. Natomiast jednostka specjalna B2 ma teraz obok siebie wydrukowane po rosyjsku słowo “Fialka”.
 
-    Note that your figure will automatically be placed in the most appropriate place for it, given the surrounding text and taking into account other figures or tables that may be close by. You can find out more about adding images to your documents in this help article on \href{https://www.overleaf.com/learn/how-to/Including_images_on_Overleaf}{including images on Overleaf}.
+Nie dowodzi to, że Fialka rzeczywiście była używana w połączeniu z radiotelefonem R-142, ale dowodzi, że mogła być używana z R-142. Instrukcja z 1983 roku wyjaśnia, że jednostki specjalne B1 i B2 nie są dostarczane z zestawem i że urządzenia te zostaną wydane w przypadku konfliktu. Jest więc całkiem możliwe, że specjalne maszyny Fialka i Jachta były przechowywane w magazynie, tylko po to, by w razie wojny zostać wydane. W takiej sytuacji operator pobierał Fialkę, wkładał ją w puste miejsce w radioodbiorniku i podłączał kable. Jak na razie nie udało się zlokalizować odpowiednich złącz do tego celu.
 
-    \begin{figure}
-        \centering
-        \includegraphics[width=0.3\textwidth]{frog.jpg}
-        \caption{\label{fig:frog}This frog was uploaded via the file-tree menu.}
-    \end{figure}
+W tej sytuacji depesze Fialki byłyby nadal przygotowywane w trybie off-line i zapisywane najpierw na taśmie papierowej. Po sprawdzeniu, czytnik taśmy w Fialce oraz podłączony radionadajnik byłyby wykorzystywany do transmisji komunikatu w trybie on-line.
 
-    \subsection{How to add Tables}
+\section{Komponenty Fialki}
 
-    Use the table and tabular environments for basic tables --- see Table~\ref{tab:widgets}, for example. For more information, please see this help article on \href{https://www.overleaf.com/learn/latex/tables}{tables}.
+Głównymi komponentami maszyny są: 
 
-    \begin{table}
-        \centering
-        \begin{tabular}{l|r}
-            Item    & Quantity \\\hline
-            Widgets & 42       \\
-            Gadgets & 13
-        \end{tabular}
-        \caption{\label{tab:widgets}An example table.}
-    \end{table}
+\begin{itemize}
+\item Klawiatura – komponent, który umożliwiał wpisywanie liter do zaszyfrowania. Na pierwszy rzut oka wygląda jak standardowa klawiatura maszyny do pisania, jednak jej układ był dostosowany do lokalnego języka każdego kraju, który używał Fialki. Standardowa klawiatura miała 30 klawiszy i odpowiadała 30-tu najczęściej używanym znakom rosyjskiej cyrylicy. W przypadku późniejszych dwujęzycznych maszyn klawiatura zawierała dwa znaki na każdym klawiszu – rosyjski (na zielono) i łaciński (na czerwono). Ponieważ alfabet łaciński składa się z 26 liter, pozostałe klawisze wykorzystywano do dodawania cyfr do zestawu znaków. Jako że każdy z krajów używających Fialki miał swoje własne językowe odmiany alfabetu łacińskiego, w późniejszym czasie dodano obsługę lokalnych języków, nie tracąc kompatybilności ze starszymi maszynami. Kolejną nowością było również wprowadzenie kodowania tylko cyfr, co umożliwiło kodowanie już zakodowanych wiadomości numerycznych.
+\item Czytnik kart dziurkowanych (czytnik kluczy dziennych) – znajduje się z lewej strony Fialki i można go otworzyć poprzez opuszczenie błyszczącego metalowego uchwytu i wysunięcie szufladki. W szufladce należy umieścić kartę-klucz (jeśli jest obecna) w celu "zaprogramowania" czytnika. Sam czytnik kart składa się z 30 ruchomych styków, które służą do "wyczuwania" otworów w karcie kluczowej. Gdy szuflada jest zamknięta, każdy z 30 przełączników "zablokuje się" w odpowiednim otworze. W rzeczywistych warunkach użytkowania, karta kluczowa była wymieniana codziennie. Karty te były produkowane przez Rosjan dla wszystkich krajów Paktu Warszawskiego na okres jednego roku. Każdy kraj miał swój unikalny zestaw kart, które były zszyte razem w stos. Karta kluczowa musiała być codziennie wymieniana, więc operator Fialki musiał codziennie odrywać jedną kartę ze stosu i wkładać ją do Fialki. Fialce. Kartki były wykonane z dość cienkiego papieru, który po kilkukrotnym otwarciu i zamknięciu szuflady ulegał rozerwaniu.
+\item Zestaw 10 krążków (rotorów) – mechanizm kodujący. Krążki są przesuwane przy każdym naciśnięciu klawisza klawiatury i wiele z nich może poruszać się jednocześnie (należy pamiętać, że sąsiednie kółka poruszają się w przeciwnym kierunku). Każde koło ma 30 styków po obu stronach połączonych w pewien zakodowany sposób. Koło ma zatem 30 pozycji, w których może być obracane. Dwie duże statyczne tarcze są używane do połączenia obu końców bębna z obwodami elektrycznymi Fialki – tarcza po prawej stronie nazywana jest tarczą wejściową, natomiast tarcza po lewej stronie nazywana jest reflektorem.
+\item Krążek początkowy – inaczej tarcza wejściowa jest statyczną tarczą z 30 stykami, na prawo od bębna. 30 styków z tablicy przełączników klawiatury jest poprowadzonych przez przełącznik i czytnik kart do tarczy wejściowej. Tarcza wejściowa stanowi połączenie pomiędzy statycznymi częściami Fialki a obracającym się bębnem. Patrząc na płytę wejściową od prawej strony (tj. od strony lutowania), piny są ponumerowane zgodnie z ruchem wskazówek zegara, zaczynając od pinu 1 na górze (oznaczonego białą kropką).
+\item Reflektor (krążek końcowy) - służy do „odbijania” prądu z powrotem do bębna, co czyni proces szyfrowania operacją odwrotną. W przeciwieństwie np. do Enigmy, litera może być zaszyfrowana sama w sobie. Reflektor jest statycznym dyskiem z 30 stykami, umieszczonym na lewo od bębna. Patrząc na reflektor od prawej strony (tj. od tarczy wejściowej), styki są ponumerowane zgodnie z ruchem wskazówek zegara, zaczynając od styku na górze (oznaczonego białą kropką).
+\item “Magiczny Obwód” – mechanizm umożliwiający zakodowanie znaku w samego siebie. Podobnie jak w Enigmie, reflektor Fialki łączy ze sobą pary przewodów. Gdy prąd trafi na jeden styk, zostanie odbity z powrotem do bębna przez drugi styk i vice versa. Styki są połączone parami, tak jak można by się tego spodziewać, ale są też 4 „specjalne” przewody, które wydają się prowadzić donikąd. Przez długi czas przeznaczenie tych 4 „specjalnych” przewodów było nieznane. W przeciwieństwie do pozostałych 26 przewodów, nie są one połączone w pary, ale do obwodu elektronicznego, który znajduje się wewnątrz dużej czerwonej „plamy” na prawo od bębna, nazywanej właśnie „Magicznym Obwodem”. Wszystkie 4 „specjalne” przewody z odbłyśnika idą do płytki, na której znajdują się 3 tranzystory i 7 diod, choć w rzeczywistości jedna dioda nie jest w ogóle połączona z resztą obwodu. Jeden przewód reflektora jest podłączony tylko do diody, która z kolei jest podłączona do mechanicznego 5-bitowego kodera tekstu jawnego (pod klawiaturą). Ta linia jest używana do unieważniania zakodowanej litery i zastępowania jej oryginalną literą. Kiedy prąd (przez bęben) osiągnie pin 13 reflektora, żaden sygnał nie jest zwracany i używana jest litera w postaci zwykłego tekstu. Daje to szansę 1:30 na to, że litera zostanie zaszyfrowana jako ona sama. Pozostałe 3 przewody są podłączone do obwodu tranzystorowego, który najlepiej można opisać jako przełącznik rotacyjny. Kiedy prąd trafia na pin 18 reflektora w trybie kodowania, zostanie zwrócony przez pin 24. Jednak, gdy prąd trafi na pin 24, zostanie odbity przez pin 16. W końcu, jeśli prąd wejdzie na pin 16, droga powrotna będzie przez pin 18.
+\item Klucze dzienne – Na początku każdego dnia, Fialka musiała być ustawiona na aktualny klucz dzienny, plus klucz wiadomości. Jak sama nazwa wskazuje, klucz dzienny był używany w ciągu jednego dnia. Natomiast klucz wiadomości był inny dla każdej wiadomości wysyłanej kluczem dziennym. Klucz dzienny wyjmowano z zapieczętowanego woreczka. Zarówno tabele z kluczami dziennymi, jak i dziurkowane karty z kluczami są ponumerowane od 01 do 31, po jednej na każdy dzień miesiąca. Karty dziurkowane zawierały matrycę 30 x 30, w której w każdym wierszu/kolumnie był wybity jeden otwór. Kartę klucza umieszczano w szufladce (czytniku kart) po lewej stronie Fialki. 
+W tabeli klucza dziennego, w pierwszym rzędzie znajdowała się kolejność rotorów. W rzędzie drugim natomiast były ustawienia początkowe rotorów, które były wykorzystywane do odszyfrowania wskaźnika nadawanego komunikatu (broadcast).
+\item Klucze wiadomości – tabela klucza wiadomości zawierała początkowe ustawienia rotorów, które miały być użyte z każdym komunikatem. Jeden klucz nie mógł być użyty więcej niż jeden raz. Książka z kluczami była rozprowadzana w zafoliowanym opakowaniu, z tabelami kluczy dziennych i kartami dziurkowanymi.
+\item Enkoder 5-bitowy – jest to 5 przełączników bezpośrednio napędzanych przez mechaniczną strukturę klawiatury – kiedy klawisz zostanie naciśnięty, zostanie on mechanicznie przetłumaczony na 5-bitowy wzór cyfrowy (jest to cyfrowa reprezentacja litery w jawnym tekście). Mechaniczny enkoder był używany w trybie plain-text i zamieniał litery na 5-bitowe słowa bez kodowania. Enkoder elektroniczny, składający się z macierzy diód, używany był podczas odszyfrowywania i szyfrowania a końcowy sygnał do enkodera przechodził przez klawiaturę, zestaw krążków itp.
+\end{itemize}
 
-    \subsection{How to add Comments and Track Changes}
+\section{Opis działania maszyny}
+Konstrukcja Fialki jest w dużej mierze oparta na znanej maszynie Enigma, która była używana przez niemieckie siły zbrojne podczas II wojny światowej. Podobnie jak Enigma, wykorzystuje ona szereg kół kodowych do szyfrowania liter wpisywanych na klawiaturze. Z każdym naciśnięciem klawisza, koła przesuwają się do nowej pozycji, tym samym efektywnie zmieniając alfabet - substytucję dla każdej litery wpisanej na klawiaturze. I na tym kończy się podobieństwo do Enigmy. Fialka zamiast prezentować dane wyjściowe na panelu lampowym, drukuje zakodowaną literę bezpośrednio na taśmie papierowej. Równocześnie może ona zapisywać litery w 5-bitowym kodzie cyfrowym, przypominającym kod Baudot’a dalekopisu. Ponadto Fialka zawiera czytnik taśmy papierowej, który może być użyty do nadawania lub powielania wiadomości. 
 
-    Comments can be added to your project by highlighting some text and clicking ``Add comment'' in the top right of the editor pane. To view existing comments, click on the Review menu in the toolbar above. To reply to a comment, click on the Reply button in the lower right corner of the comment. You can close the Review pane by clicking its name on the toolbar when you're done reviewing for the time being.
+Podczas szyfrowania i deszyfrowania zachodzą następujące zdarzenia: 
 
-    Track changes are available on all our \href{https://www.overleaf.com/user/subscription/plans}{premium plans}, and can be toggled on or off using the option at the top of the Review pane. Track changes allow you to keep track of every change made to the document, along with the person making the change.
+\begin{enumerate}
+    \item Klawisz jest wciśnięty.
+    \item Zamiana litery u góry klawisza na literę cyrylicy (np. F → A).
+    \item Substytucja z klawiatury do czytnika kart.
+    \item Zastępowanie przez sam czytnik, czyli kartę klucza dziennego (macierz rzadka 30x30 lub macierz jednostkową reprezentowana przez obecność trójkąta metalowego).
+    \item Substytucja z czytnika kart do tarczy początkowej (Entry Disc).
+    \item +3 (różnica między 1. stykiem tarczy początkowej a literą nad linijką).
+    \item Zastosować podstawienie dla każdego z rotorów od 10 do 1.
+    \item -3 (różnica między literą nad linijką a stykiem 1 reflektora).
+    \item Podstawienie przez reflektor (inne połączenia dla kodowania i dekodowania, za sprawą magicznego obwodu).
+    \item +3 (różnica między 1. stykiem tarczy reflektora a literą nad linijką).
+    \item Podstawianie odwrotne dla każdego z wirników od 1 do 10.
+    \item -3 (różnica między literą nad linijką i 1. stykiem tarczy początkowej).
+    \item Podstawianie odwrotne z tarczy początkowej do czytnika kart.
+    \item Podstawianie odwrotne przez sam czytnik (lub macierz jednostkową, w przypadku użycia trójkąta).
+    \item Odwrotne podstawianie z czytnika kart do klawiatury.
+    \item Drukowana jest litera.
+    \item Koła są przesuwane (zgodnie z wyprzedzeniem kołków blokujących, aktualną pozycją i aktualnym ustawieniem pierścieni).
+\end{enumerate}
 
-    \subsection{How to add Lists}
+\section{Opis sposobu przeprowadzenia symulacji}
 
-    You can make lists with automatic numbering \dots
+Symulator działa w sposób zbliżony do prawdziwej maszyny.
 
-    \begin{enumerate}
-        \item Like this,
-        \item and like this.
-    \end{enumerate}
-    \dots or bullet points \dots
-    \begin{itemize}
-        \item Like this,
-        \item and like this.
-    \end{itemize}
+\bibliographystyle{alpha}
+\bibliography{}
 
-    \subsection{How to write Mathematics}
+\href{https://www.cryptomuseum.com/pub/files/Fialka_200.pdf}{Detailed description of the Russian Fialka cipher machines}
 
-    \LaTeX{} is great at typesetting mathematics. Let $X_1, X_2, \ldots, X_n$ be a sequence of independent and identically distributed random variables with $\text{E}[X_i] = \mu$ and $\text{Var}[X_i] = \sigma^2 < \infty$, and let
-    \[S_n = \frac{X_1 + X_2 + \cdots + X_n}{n}
-    = \frac{1}{n}\sum_{i}^{n} X_i\]
-    denote their mean. Then as $n$ approaches infinity, the random variables $\sqrt{n}(S_n - \mu)$ converge in distribution to a normal $\mathcal{N}(0, \sigma^2)$.
+\href{https://github.com/CrypToolProject/CrypTool-2}{Official CrypTool 2 git repository}
 
-    \subsection{How to change the margins and paper size}
-
-    Usually the template you're using will have the page margins and paper size set correctly for that use-case. For example, if you're using a journal article template provided by the journal publisher, that template will be formatted according to their requirements. In these cases, it's best not to alter the margins directly.
-
-    If however you're using a more general template, such as this one, and would like to alter the margins, a common way to do so is via the geometry package. You can find the geometry package loaded in the preamble at the top of this example file, and if you'd like to learn more about how to adjust the settings, please visit this help article on \href{https://www.overleaf.com/learn/latex/page_size_and_margins}{page size and margins}.
-
-    \subsection{How to change the document language and spell check settings}
-
-    Overleaf supports many different languages, including multiple different languages within one document.
-
-    To configure the document language, simply edit the option provided to the babel package in the preamble at the top of this example project. To learn more about the different options, please visit this help article on \href{https://www.overleaf.com/learn/latex/International_language_support}{international language support}.
-
-    To change the spell check language, simply open the Overleaf menu at the top left of the editor window, scroll down to the spell check setting, and adjust accordingly.
-
-    \subsection{How to add Citations and a References List}
-
-    You can simply upload a \verb|.bib| file containing your BibTeX entries, created with a tool such as JabRef. You can then cite entries from it, like this: \cite{greenwade93}. Just remember to specify a bibliography style, as well as the filename of the \verb|.bib|. You can find a \href{https://www.overleaf.com/help/97-how-to-include-a-bibliography-using-bibtex}{video tutorial here} to learn more about BibTeX.
-
-    If you have an \href{https://www.overleaf.com/user/subscription/plans}{upgraded account}, you can also import your Mendeley or Zotero library directly as a \verb|.bib| file, via the upload menu in the file-tree.
-
-    \subsection{Good luck!}
-
-    We hope you find Overleaf useful, and do take a look at our \href{https://www.overleaf.com/learn}{help library} for more tutorials and user guides! Please also let us know if you have any feedback using the Contact Us link at the bottom of the Overleaf menu --- or use the contact form at \url{https://www.overleaf.com/contact}.
-
-    \bibliographystyle{alpha}
-    \bibliography{sample}
+\href{https://www.ilord.com/fialka}{Bob Lord's Crypto Museum}
 
 \end{document}
