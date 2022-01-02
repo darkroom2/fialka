@@ -194,6 +194,13 @@ class Fialka:
         self.message_key = self.config.get('message_key').copy() if self.config.get(
             'message_key') else self.daily_key.get('rotor_offsets').copy()
 
+    def get_bitstream(self):
+        bitstream = []
+        for word in self.encoded_words:
+            for char in word:
+                bitstream.append(f'{char:05b}')
+        return ''.join(bitstream)
+
 
 def get_args():
     parser = ArgumentParser(description='Fialka simulator')
@@ -224,19 +231,20 @@ def main():
     config = parse_config(args.config)
 
     fialka = Fialka(config)
-    print(f'Input text: {args.input}')
-    ciphered = fialka.encrypt(args.input)
-    print(f'Encrypted text: {ciphered}')
-    bitstream = []
-    for word in fialka.encoded_words:
-        for char in word:
-            bitstream.append(f'{char:05b}')
-    bitstream = ''.join(bitstream)
-    print(f'Radio transmission bits: {bitstream}')
 
-    fialka.operation = 'decrypt'
-    plain = fialka.decrypt(bitstream)
-    print(f'Decrypted from radio: {plain}')
+    print(f'Input text: {args.input}')
+
+    if args.mode == 'encrypt':
+        ciphered = fialka.encrypt(args.input)
+        print(f'Encrypted text: {ciphered}')
+
+        bitstream = fialka.get_bitstream()
+        print(f'Radio transmission bits: {bitstream}')
+
+    else:
+        fialka.operation = 'decrypt'
+        plain = fialka.decrypt(args.input)
+        print(f'Decrypted from radio: {plain}')
 
 
 if __name__ == '__main__':
