@@ -16,14 +16,15 @@ class Fialka:
         self.reflector = config.get('reflector')
         self.keyboard_mapping = config.get('keyboard_mapping')
         self.rotors_wiring = config.get('rotors_wiring')
-        self.rotor_offsets = config.get('rotor_offsets').copy()
+        self.daily_key = config.get('daily_key')
+        self.message_key = config.get('message_key').copy() if config.get('message_key') else self.daily_key.get(
+            'rotor_offsets').copy()
         self.pin_positions = config.get('pin_positions')
         self.encoding = config.get('encoding')
-        self.encoder = config.get(
-            'encoder')  # TODO: kolejnosc taka jak w alph cos tam cos tam
+        self.encoder = config.get('encoder')
 
         seed(self.seed)
-        self.punch_card = config.get('punch_card') or self.random_punch_card()
+        self.punch_card = self.daily_key.get('punch_card') or self.random_punch_card()
 
         self.punch_card_inv = self.invert_array(self.punch_card)
         self.entry_disc_inv = self.invert_array(self.entry_disc)
@@ -123,13 +124,13 @@ class Fialka:
         return output
 
     def handle_rotor(self, dir_ed_to_ref, i, input):
-        output = input + self.rotor_offsets[i]
+        output = input + self.message_key[i]
         output = (output + self.alphabet_length) % self.alphabet_length
         if dir_ed_to_ref:
             output = self.rotors_wiring[i + 1][output]
         else:
             output = self.rotors_wiring_inv[i + 1][output]
-        output -= self.rotor_offsets[i]
+        output -= self.message_key[i]
         output = (output + self.alphabet_length * 2) % self.alphabet_length
         return output
 
@@ -139,20 +140,20 @@ class Fialka:
     def step_rotors(self):
         for i in range(1, 10, 2):
             # Page 80
-            check_position = (self.rotor_offsets[i] + 17) % self.alphabet_length
-            self.rotor_offsets[i] = self.advance_rotor(i,
-                                                       self.alphabet_length - 1)
+            check_position = (self.message_key[i] + 17) % self.alphabet_length
+            self.message_key[i] = self.advance_rotor(i,
+                                                     self.alphabet_length - 1)
             if self.pin_positions[i + 1][check_position] == 1:
                 break
 
         for i in range(8, -1, -2):
-            check_position = (self.rotor_offsets[i] + 20) % self.alphabet_length
-            self.rotor_offsets[i] = self.advance_rotor(i)
+            check_position = (self.message_key[i] + 20) % self.alphabet_length
+            self.message_key[i] = self.advance_rotor(i)
             if self.pin_positions[i + 1][check_position] == 1:
                 break
 
     def advance_rotor(self, i, offset=1):
-        temp = self.rotor_offsets[i] + offset
+        temp = self.message_key[i] + offset
         return temp % self.alphabet_length
 
     def map_key(self, c):
@@ -190,7 +191,8 @@ class Fialka:
         return ''.join(decoded_keyboard)
 
     def reset_offsets(self):
-        self.rotor_offsets = self.config.get('rotor_offsets')
+        self.message_key = self.config.get('message_key').copy() if self.config.get(
+            'message_key') else self.daily_key.get('rotor_offsets').copy()
 
 
 def get_args():
