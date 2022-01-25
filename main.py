@@ -190,6 +190,13 @@ class Fialka:
         decoded_keyboard = [self.key_map(code) for code in decrypted]
         return ''.join(decoded_keyboard)
 
+    def decrypt_text(self, ciphertext):
+        self.reset_offsets()
+        encoded_keyboard = [self.map_key(ch) for ch in ciphertext]
+        decrypted = [self._encrypt(ch) for ch in encoded_keyboard]
+        decoded_keyboard = [self.key_map(code) for code in decrypted]
+        return ''.join(decoded_keyboard)
+
     def reset_offsets(self):
         self.message_key = self.config.get('message_key').copy() if self.config.get(
             'message_key') else self.daily_key.get('rotor_offsets').copy()
